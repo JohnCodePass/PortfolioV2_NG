@@ -1,32 +1,49 @@
 p {
   color: white;
 }
-
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
 @media screen and (min-width: 601px) {
   p#nameArea {
-    font-size: 62px;
+    font-family: "Raleway", sans-serif;
+    font-size: 55px;
   }
-  p#devTitle{
-      font-size: 36px;
+  p#devTitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 768px) {
-    p#nameArea {
-      font-size: 38px;
-    }
-    p#devTitle{
-        font-size: 24px;
-    }
+  p#nameArea {
+    font-family: "Raleway", sans-serif;
+    font-size: 38px;
   }
+  p#devTitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 24px;
+  }
+}
 
 nav {
-  background-color: #181818;
+  background-color: #2c2c2c;
   color: white;
   .navbar-toggler {
     color: white;
   }
   .nav-link {
     color: white;
+    cursor: pointer;
   }
+}
+
+.card-title {
+  color: #4e4e4e;
+}
+
+.card-text {
+  color: #4e4e4e;
+}
+
+i {
+  color: #2c2c2c;
 }
