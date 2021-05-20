@@ -80,27 +80,27 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="">
-                                HTML5
+                                <span class="skillsText">HTML5</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/48/000000/css3.png" />
-                                CSS
+                                <span class="skillsText">CSS</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/50/000000/javascript.png" />
-                                JavaScript
+                                <span class="skillsText">JavaScript</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" />
-                                C#
+                                <span class="skillsText">C#</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/48/000000/typescript.png" />
-                                TypeScript
+                                <span class="skillsText">TypeScript</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/dotty/48/000000/sql.png"/>
-                                SQL
+                                <span class="skillsText">SQL</span>
                             </li>
                         </ul>
                     </div>
@@ -110,19 +110,19 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/48/000000/bootstrap.png" />
-                                Bootstrap
+                                <span class="skillsText">Bootstrap</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/windows/48/000000/mdb.png" />
-                                Material Design Bootstrap
+                                <span class="skillsText">Material Design Bootstrap</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/48/000000/angularjs.png" />
-                                Angular
+                                <span class="skillsText">Angular</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/plasticine/48/000000/react.png"/>
-                                React
+                                <span class="skillsText">React</span>
                             </li>
                         </ul>
                     </div>
@@ -132,11 +132,11 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/48/000000/adobe-xd.png" />
-                                Adobe Xd
+                                <span class="skillsText">Adobe Xd</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/windows/48/000000/wix.png"/>
-                                Wix
+                                <span class="skillsText">Wix</span>
                             </li>
                         </ul>
                     </div>
@@ -146,15 +146,15 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/ios-filled/48/000000/github.png" />
-                                GitHub
+                                <span class="skillsText">GitHub</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/48/000000/jira.png" />
-                                Jira
+                                <span class="skillsText">Jira</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/fluent/48/000000/visual-studio-code-2019.png" />
-                                VS Code
+                                <span class="skillsText">VS Code</span>
                             </li>
                             <li class="list-group-item">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48"
@@ -171,15 +171,15 @@
                                         </g>
                                     </g>
                                 </svg>
-                                Postman
+                                <span class="skillsText">Postman</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/48/000000/slack-new.png"/>
-                                Slack
+                                <span class="skillsText">Slack</span>
                             </li>
                             <li class="list-group-item">
                                 <img src="https://img.icons8.com/color/48/000000/azure-1.png"/>
-                                Azure
+                                <span class="skillsText">Azure</span>
                             </li>
                         </ul>
                     </div>
@@ -197,25 +197,27 @@
 
 <div id="projectArea" class="container-fluid py-5 d-flex justify-content-center align-items-center"
     style="background-color: rgb(248, 241, 229);">
-    <div class="row py-5 d-flex justify-content-center">
-        <div class="card mx-3 my-3 bg-image hover-overlay hover-zoom hover-shadow ripple"
-            *ngFor="let menuItem of menuItems" style="width: 24rem;">
-            <img src={{menuItem.pic}} style="object-fit: cover; width: 23.88rem; height: 12rem;" class="w-100" />
-            <div class="card-body">
-                <h4 class="card-title">{{ menuItem.title }}</h4>
-                <p class="card-text"><b>{{ menuItem.techUsed }}</b></p>
-                <p class="card-text">{{ menuItem.desc}}</p>
-            </div>
-            <div class="row mx-2 py-3">
-                <div class="col-2">
-                    <a href="" title="GitHub">
-                        <i class="fab fa-github fa-2x"></i>
-                    </a>
+    <div class="col-8">
+        <div class="row py-5 d-flex justify-content-center">
+            <div class="card mx-3 my-3 bg-image hover-overlay hover-zoom hover-shadow ripple"
+                *ngFor="let menuItem of menuItems" style="width: 24rem;">
+                <img src={{menuItem.pic}} style="object-fit: cover; width: 23.88rem; height: 12rem;" class="w-100" />
+                <div class="card-body">
+                    <h4 class="card-title">{{ menuItem.title }}</h4>
+                    <p class="card-text"><b>{{ menuItem.techUsed }}</b></p>
+                    <p class="card-text">{{ menuItem.desc}}</p>
                 </div>
-                <div class="col-2">
-                    <a href="" title="Live Code">
-                        <i class="fas fa-laptop-code fa-2x"></i>
-                    </a>
+                <div class="row mx-2 py-3">
+                    <div class="col-2">
+                        <a href="" title="GitHub">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <a href="" title="Live Version">
+                            <i class="fas fa-laptop-code fa-2x"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
