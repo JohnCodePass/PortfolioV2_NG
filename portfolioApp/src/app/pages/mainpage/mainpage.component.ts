@@ -71,6 +71,66 @@ export class MainpageComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+    let dateVar: Date = new Date();
+    let getHours = dateVar.getHours();
+    // let getHours = 5;
+    console.log(getHours);
+    let theHomeArea = document.getElementById('homeArea')
+    if((getHours >= 22) && (getHours < 24)){
+      // 10pm to 1am
+      theHomeArea!.style.background = "url('../../../assets/images/setandmoon8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
+    if((getHours >= 24) || (getHours < 2)){
+      // 12am to 1am
+      theHomeArea!.style.background = "url('../../../assets/images/moonup8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
+    if((getHours >= 2) && (getHours < 6)){
+      // 2am to 5am
+      theHomeArea!.style.background = "url('../../../assets/images/pastmoon8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
+    if((getHours >= 5) && (getHours < 7)){
+      // 5am to 6am
+      theHomeArea!.style.background = "url('../../../assets/images/sunrise8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
+    if((getHours >= 7) && (getHours < 9)){
+      // 7am to 8am
+      theHomeArea!.style.background = "url('../../../assets/images/morning8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
+    if((getHours >= 8) && (getHours < 11)){
+      // 8am to 10am
+      theHomeArea!.style.background = "url('../../../assets/images/highermorning8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
+    if((getHours >= 11) && (getHours < 14)){
+      // 11pm to 1pm
+      theHomeArea!.style.background = "url('../../../assets/images/noon8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
+    if((getHours >= 14) && (getHours < 17)){
+      // 2pm to 4pm
+      theHomeArea!.style.background = "url('../../../assets/images/pastnoon8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
+    if((getHours >= 17) && (getHours < 19)){
+      // 5pm to 6pm
+      theHomeArea!.style.background = "url('../../../assets/images/towardsevening8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
+    if((getHours >= 19) && (getHours < 21)){
+      // 7pm to 8pm
+      theHomeArea!.style.background = "url('../../../assets/images/nearsunset8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
+    if((getHours >= 21) && (getHours < 22)){
+      // 9pm to 8pm
+      theHomeArea!.style.background = "url('../../../assets/images/sunset8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+    }
   }
 
   topScroll() {
