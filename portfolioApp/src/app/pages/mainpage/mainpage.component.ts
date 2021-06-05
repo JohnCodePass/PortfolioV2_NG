@@ -26,6 +26,14 @@ export const ROUTES: RouteInfo[] = [
     live: "",
   },
   {
+    title: "Personal Portfolio",
+    pic: "../../../assets/images/pastmoon8bit.png",
+    techUsed: "HTML, SCSS, MDBootStrap, TypeScript, Angular 11, Adobe Xd",
+    desc: "Personal portfolio, used to hold my projects, skills, small about me, resume, and ways to contact me",
+    git: "",
+    live: "",
+  },
+  {
     title: "Business Redevelopment",
     pic: "../../../assets/images/SHOP.jpg",
     techUsed: "HTML, CSS, BootStrap, Adobe Xd",
