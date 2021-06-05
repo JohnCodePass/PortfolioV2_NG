@@ -21,7 +21,7 @@
                     <a class="nav-link" (click)="projectsScroll()">projects</a>
                 </li>
                 <li class="nav-item mx-lg-3">
-                    <a class="nav-link">resume</a>
+                    <a class="nav-link" target="_blank" href="../../../assets/JuanMoralesResume2021.pdf">resume</a>
                 </li>
             </ul>
             <!-- Left links -->
@@ -34,8 +34,8 @@
 <div id="homeArea" class="container-fluid d-flex justify-content-center flex-column" style="height: 100vh;">
     <div class="row d-flex justify-content-center" style="width: 100%;">
         <div class="col-lg-8 col-md-8 d-flex justify-content-center align-items-center flex-column">
-            <p id="nameArea">JUAN MORALES</p>
-            <p id="devTitle">Front End Developer</p>
+            <p id="nameArea" [ngClass]="{'dayTime': dayToggle}">JUAN MORALES</p>
+            <p id="devTitle" [ngClass]="{'dayTime': dayToggle}">Front End Developer</p>
         </div>
         <!-- <div class="col-lg-4 col-md-6 col-6 d-flex justify-content-center align-items-center">
             <img src="../../../assets/images/macbookCoding.jpg" class="img-fluid rounded" alt="">
@@ -44,31 +44,39 @@
     <div class="row d-flex justify-content-center" style="width: 100%; height: 10rem;">
         <div class="col-lg-8 col-md-8 d-flex justify-content-center align-items-center">
             <ul class="list-group list-group-horizontal">
-                <li class="list-group-item d-flex flex-column align-items-center">
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/JohnCodePass" title="GitHub"
-                        style="color: white;">
-                        <i class='fab fa-github fa-2x'></i>
+                <li class="list-group-item d-flex flex-column align-items-center" [ngClass]="{'dayTime': dayToggle}">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/JohnCodePass" title="GitHub">
+                        <i class="fab fa-github fa-2x" [ngClass]="{'dayTime': dayToggle}"></i>
                     </a>
                     <a target="_blank" rel="noopener noreferrer" href="https://github.com/JohnCodePass" title="GitHub"
-                        style="color: white;"><span>Github</span></a>
+                        [ngClass]="{'dayTime': dayToggle}"><span>Github</span></a>
                 </li>
-                <li class="list-group-item d-flex flex-column align-items-center">
+                <li class="list-group-item d-flex flex-column align-items-center" [ngClass]="{'dayTime': dayToggle}">
                     <a target="_blank" rel="noopener noreferrer"
                         href="https://www.linkedin.com/in/juan-morales-50a704162" title="LinkedIn"
-                        style="color: white;">
-                        <i class='fab fa-linkedin fa-2x'></i>
+                        [ngClass]="{'dayTime': dayToggle}">
+                        <i class='fab fa-linkedin fa-2x' [ngClass]="{'dayTime': dayToggle}"></i>
                     </a>
                     <a target="_blank" rel="noopener noreferrer"
                         href="https://www.linkedin.com/in/juan-morales-50a704162" title="LinkedIn"
-                        style="color: white;"><span>LinkedIn</span></a>
+                        [ngClass]="{'dayTime': dayToggle}"><span>LinkedIn</span></a>
                 </li>
-                <li class="list-group-item d-flex flex-column align-items-center">
-                    <a href="" title="Resume" style="color: white;">
-                        <i class='far fa-file fa-2x'></i>
+                <li class="list-group-item d-flex flex-column align-items-center" [ngClass]="{'dayTime': dayToggle}">
+                    <a href="" title="Resume" [ngClass]="{'dayTime': dayToggle}">
+                        <i class='far fa-file fa-2x' [ngClass]="{'dayTime': dayToggle}"></i>
                     </a>
-                    <a href="" title="Resume" style="color: white;"><span>Resume</span></a>
+                    <a target="_blank" href="../../../assets/JuanMoralesResume2021.pdf" title="View Resume"
+                        [ngClass]="{'dayTime': dayToggle}"><span>Resume</span></a>
                 </li>
             </ul>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-8 d-flex justify-content-center">
+            <input #userHour type="number" id="hourInput" name="inputHour" min="0" max="24"
+                placeholder="{{getHours}}/24 Hours" (keyup.enter)="updateHourValue(+userHour.value)">
+            <button id="theSubBtn" [ngClass]="dayToggle == true ? 'btn btn-outline-dark': 'btn btn-outline-light'"
+                (click)="updateHourValue(+userHour.value)">Submit Time Change</button>
         </div>
     </div>
     <div class="row d-flex justify-content-center" style="position: sticky;">
@@ -77,24 +85,22 @@
         </div>
     </div>
 </div>
-<div class="container-fluid" style="padding: 0px;">
-    <svg viewBox="0 186.5 1920 113.5">
-        <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 " style="fill:white;" />
-    </svg>
-</div>
+
 
 <div id="aboutMe" class="container-fluid py-5 d-flex justify-content-center flex-column"
-    style="background-color: white;">
+    [ngClass]="{'aboutMeDay': dayToggle, 'aboutMeNight' : !dayToggle}">
     <div class="row py-3 d-flex justify-content-center">
-        <div class="col-8 d-flex justify-content-center">
+        <div class="col-8 col-sm-12 d-flex justify-content-center">
             <h2 class="sectionTitles">about</h2>
         </div>
     </div>
     <div class="row pb-5 d-flex justify-content-center align-items-center">
-        <div class="col-6">
-            <p style="color: #2c2c2c;">Currently I am a CodeStack Academy student located in Stockton, California, with a passion for learning.
-                Frontend is my main focus and
-                learning backend is my current goal. I am experienced in various technologies, and would love to have an
+        <div class="col-lg-6 col-sm-12">
+            <p>Currently I am a CodeStack Academy student with over 1100 hours of practice
+                located in Stockton, California, with a passion for learning. CodeStack Academy is an 10 month intensive
+                program where we are pushed to limit daily from 9am-4pm.
+                Frontend is my main focus and learning backend is my current goal. I am experienced in various
+                technologies, and would love to have an
                 opportunity to work with you.</p>
         </div>
     </div>
@@ -108,7 +114,7 @@
             <div class="row">
                 <div class="col-6 d-flex justify-content-center">
                     <ul class="list-group list-group-flush">
-                        <p style="color: #2c2c2c; font-size: 18px;">Programming Languages</p>
+                        <p style="font-size: 18px;">Programming Languages</p>
                         <li class="list-group-item">
                             <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="">
                             <span class="skillsText">HTML5</span>
@@ -130,20 +136,21 @@
                             <span class="skillsText">TypeScript</span>
                         </li>
                         <li class="list-group-item">
-                            <img src="https://img.icons8.com/dotty/48/000000/sql.png" />
+                            <img src="https://img.icons8.com/color/48/000000/sql.png" />
                             <span class="skillsText">SQL</span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
                     <ul class="list-group list-group-flush">
-                        <p style="color: #2c2c2c; font-size: 18px;">Frameworks/Libraries</p>
+                        <p style="font-size: 18px; text-align: center;">Frameworks/Libraries</p>
                         <li class="list-group-item">
                             <img src="https://img.icons8.com/color/48/000000/bootstrap.png" />
                             <span class="skillsText">Bootstrap/NGBootstrap</span>
                         </li>
                         <li class="list-group-item">
-                            <img src="https://img.icons8.com/windows/48/000000/mdb.png" />
+                            <img src="../../../assets/images/mdb-transaprent-noshadows.png"
+                                style="width: 48px; height: 35px;" />
                             <span class="skillsText">Material Design Bootstrap</span>
                         </li>
                         <li class="list-group-item">
@@ -162,22 +169,35 @@
             <div class="row">
                 <div class="col-6 d-flex justify-content-center">
                     <ul class="list-group list-group-flush">
-                        <p style="color: #2c2c2c; font-size: 18px;">Design</p>
+                        <p style="font-size: 18px;">Design</p>
                         <li class="list-group-item">
                             <img src="https://img.icons8.com/color/48/000000/adobe-xd.png" />
                             <span class="skillsText">Adobe Xd</span>
                         </li>
                         <li class="list-group-item">
-                            <img src="https://img.icons8.com/windows/48/000000/wix.png" />
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32"
+                                viewBox="0 0 172 172" style=" fill:#000000;">
+                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
+                                    stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
+                                    text-anchor="none" style="mix-blend-mode: normal">
+                                    <path d="M0,172v-172h172v172z" fill="none"></path>
+                                    <g fill="#9b59b6">
+                                        <path
+                                            d="M118.52295,53.47705c-2.82188,-0.13438 -5.11255,0.27295 -5.11255,0.27295l21.5,32.25l-21.5,31.7146c0,0 9.6729,1.6125 13.9729,-2.6875c2.6875,-2.6875 4.3,-5.3771 13.4375,-18.2771c1.6125,-2.6875 3.2334,0 3.2334,0c8.0625,10.75 10.2104,15.0521 13.9729,18.2771c4.8375,3.7625 13.9729,2.6875 13.9729,2.6875l-21.5,-31.7146l20.9646,-32.25c0,0 -9.1375,-1.6125 -13.4375,2.6875c-3.225,3.225 -6.4479,7.525 -13.9729,18.8125c0,0 -1.6209,2.6875 -3.2334,0c-7.525,-10.75 -10.7479,-15.5875 -13.9729,-18.8125c-2.15,-2.15 -5.50308,-2.82607 -8.32495,-2.96045zM2.25708,53.69751c-0.76006,-0.03569 -1.51802,-0.0147 -2.25708,0.05249l17.1958,64.5c0,0 5.375,0.0042 8.0625,-1.0708c3.7625,-1.6125 5.3771,-3.2313 7.5271,-11.8313c2.15,-7.525 7.525,-30.6375 8.0625,-32.25c1.075,-3.7625 2.6938,-3.7625 3.7688,0c0.5375,1.6125 5.9125,24.1875 8.0625,32.25c2.15,8.6 3.7541,10.2188 7.5166,11.8313c3.225,1.6125 8.6084,1.0708 8.6084,1.0708l17.1958,-64.5c-5.9125,-0.5375 -12.9,2.6833 -13.4375,9.1333l-9.1333,34.4021l-7.5271,-27.9458c-1.6125,-8.0625 -5.3792,-12.3667 -12.3667,-12.3667c-6.9875,0 -10.2062,3.7667 -12.3562,12.3667l-7.5271,27.9458l-9.1438,-34.4021c-1.41094,-6.11406 -6.93081,-8.93594 -12.25122,-9.18579zM105.3479,53.75c0,0 -4.2937,-0.0042 -6.9812,1.0708c-3.225,1.6125 -4.3042,4.8396 -4.3042,12.9021c0,0 1.6167,-1.6125 4.3042,-2.6875c7.525,-2.6875 6.9812,-8.0604 6.9812,-11.2854zM104.8125,64.5v0.40942c0.13075,-0.23389 0.16192,-0.40942 0,-0.40942zM104.8125,64.90942c-0.30328,0.54252 -1.34501,1.52692 -3.2229,2.27808c-1.6125,1.075 -3.2271,1.6146 -4.8396,2.1521c-3.7625,1.6125 -3.2229,3.7583 -3.2229,9.1333v39.7771c0,0 4.2937,0.5417 6.9812,-1.0708c3.7625,-1.6125 4.3042,-3.7688 4.3042,-11.8313z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
                             <span class="skillsText">Wix</span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
                     <ul class="list-group list-group-flush">
-                        <p style="color: #2c2c2c; font-size: 18px;">DevOps/Software</p>
+                        <p style="font-size: 18px;">DevOps/Software</p>
                         <li class="list-group-item">
-                            <img src="https://img.icons8.com/ios-filled/48/000000/github.png" />
+                            <img src="https://img.icons8.com/bubbles/48/000000/github.png" />
                             <span class="skillsText">GitHub</span>
                         </li>
                         <li class="list-group-item">
@@ -214,11 +234,11 @@
                             <span class="skillsText">Azure</span>
                         </li>
                         <li class="list-group-item">
-                            <img src="https://img.icons8.com/color/48/000000/filezilla.png"/>
+                            <img src="https://img.icons8.com/color/48/000000/filezilla.png" />
                             <span class="skillsText">Filezilla</span>
                         </li>
                         <li class="list-group-item">
-                            <img src="https://img.icons8.com/ios/48/000000/notion.png"/>
+                            <img src="https://img.icons8.com/cute-clipart/48/000000/notion.png" />
                             <span class="skillsText">Notion</span>
                         </li>
                     </ul>
@@ -226,41 +246,34 @@
             </div>
         </div>
     </div>
-</div>
-
-<div class="container-fluid" style="padding: 0px; background-color: white;">
-    <svg viewBox="0 186.5 1920 113.5">
-        <polygon points="0,300 655.167,210.5 1432.5,300 1920,198.5 1920,300 " style="fill:rgb(233, 233, 233);" />
-    </svg>
-</div>
-
-<div id="projectArea" class="container-fluid py-5 d-flex justify-content-center align-items-center"
-    style="background-color: rgb(233, 233, 233);">
-    <div class="col-8">
-        <div class="row py-3 d-flex justify-content-center">
-            <div class="col-8 d-flex justify-content-center">
-                <h2 class="sectionTitles">projects</h2>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center">
-            <div class="card mx-3 my-3 bg-image hover-overlay hover-zoom hover-shadow ripple"
-                *ngFor="let menuItem of menuItems" style="width: 24rem;">
-                <img src={{menuItem.pic}} style="object-fit: cover; width: 23.88rem; height: 12rem;" class="w-100" />
-                <div class="card-body">
-                    <h4 class="card-title">{{ menuItem.title }}</h4>
-                    <p class="card-text"><b>{{ menuItem.techUsed }}</b></p>
-                    <p class="card-text">{{ menuItem.desc}}</p>
+    <div id="projectArea" class="row d-flex justify-content-center pt-5">
+        <div class="col-8">
+            <div class="row py-3 d-flex justify-content-center">
+                <div class="col-8 d-flex justify-content-center">
+                    <h2 class="sectionTitles">projects</h2>
                 </div>
-                <div class="row mx-2 py-3">
-                    <div class="col-2">
-                        <a target="_blank" rel="noopener noreferrer" href="{{ menuItem.git }}" title="GitHub">
-                            <i class="fab fa-github fa-2x iconColor"></i>
-                        </a>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="card mx-3 my-3 bg-image hover-overlay hover-zoom hover-shadow ripple"
+                    *ngFor="let menuItem of menuItems" style="width: 24rem; padding: 0px;">
+                    <img src={{menuItem.pic}} style="object-fit: cover; width: 23.88rem; height: 12rem;"
+                        class="w-100" />
+                    <div class="card-body">
+                        <h4 class="card-title">{{ menuItem.title }}</h4>
+                        <p class="card-text"><b>{{ menuItem.techUsed }}</b></p>
+                        <p class="card-text">{{ menuItem.desc}}</p>
                     </div>
-                    <div class="col-2">
-                        <a target="_blank" rel="noopener noreferrer" href="{{ menuItem.live }}" title="Live Site">
-                            <i class="fas fa-laptop-code fa-2x iconColor"></i>
-                        </a>
+                    <div class="row mx-2 py-3">
+                        <div class="col-2">
+                            <a target="_blank" rel="noopener noreferrer" href="{{ menuItem.git }}" title="GitHub">
+                                <i class="fab fa-github fa-2x iconColor"></i>
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a target="_blank" rel="noopener noreferrer" href="{{ menuItem.live }}" title="Live Site">
+                                <i class="fas fa-laptop-code fa-2x iconColor"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

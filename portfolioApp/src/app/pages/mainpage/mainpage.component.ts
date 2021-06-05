@@ -67,69 +67,85 @@ export const ROUTES: RouteInfo[] = [
 })
 export class MainpageComponent implements OnInit {
   menuItems: any = [];
+  dayToggle = true;
+  getnewHours = 9;
+  dateVar: Date = new Date();
+  getHours = this.dateVar.getHours();
   constructor() { }
 
+  // ng build --prod to get ready on Azure
   ngOnInit(): void {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
-    let dateVar: Date = new Date();
-    let getHours = dateVar.getHours();
-    // let getHours = 5;
-    console.log(getHours);
+    // let dateVar: Date = new Date();
+    // let this.getHours = dateVar.this.getHours();
+    // let this.getHours = 1;
+    console.log(this.getHours);
     let theHomeArea = document.getElementById('homeArea')
-    if((getHours >= 22) && (getHours < 24)){
+    if ((this.getHours >= 22) && (this.getHours < 24)) {
       // 10pm to 1am
       theHomeArea!.style.background = "url('../../../assets/images/setandmoon8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false
     }
-    if((getHours >= 24) || (getHours < 2)){
+    if ((this.getHours >= 24) || (this.getHours < 1)) {
       // 12am to 1am
       theHomeArea!.style.background = "url('../../../assets/images/moonup8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false
     }
-    if((getHours >= 2) && (getHours < 6)){
+    if ((this.getHours >= 2) && (this.getHours < 6)) {
       // 2am to 5am
       theHomeArea!.style.background = "url('../../../assets/images/pastmoon8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false
     }
-    if((getHours >= 5) && (getHours < 7)){
+    if ((this.getHours >= 5) && (this.getHours < 7)) {
       // 5am to 6am
       theHomeArea!.style.background = "url('../../../assets/images/sunrise8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false;
     }
-    if((getHours >= 7) && (getHours < 9)){
+    if ((this.getHours >= 7) && (this.getHours < 9)) {
       // 7am to 8am
       theHomeArea!.style.background = "url('../../../assets/images/morning8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = true;
     }
-    if((getHours >= 8) && (getHours < 11)){
+    if ((this.getHours >= 8) && (this.getHours < 11)) {
       // 8am to 10am
       theHomeArea!.style.background = "url('../../../assets/images/highermorning8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = true;
     }
-    if((getHours >= 11) && (getHours < 14)){
+    if ((this.getHours >= 11) && (this.getHours < 14)) {
       // 11pm to 1pm
       theHomeArea!.style.background = "url('../../../assets/images/noon8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = true;
     }
-    if((getHours >= 14) && (getHours < 17)){
+    if ((this.getHours >= 14) && (this.getHours < 17)) {
       // 2pm to 4pm
       theHomeArea!.style.background = "url('../../../assets/images/pastnoon8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = true;
     }
-    if((getHours >= 17) && (getHours < 19)){
+    if ((this.getHours >= 17) && (this.getHours < 19)) {
       // 5pm to 6pm
       theHomeArea!.style.background = "url('../../../assets/images/towardsevening8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = true;
     }
-    if((getHours >= 19) && (getHours < 21)){
+    if ((this.getHours >= 19) && (this.getHours < 21)) {
       // 7pm to 8pm
       theHomeArea!.style.background = "url('../../../assets/images/nearsunset8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false
     }
-    if((getHours >= 21) && (getHours < 22)){
-      // 9pm to 8pm
+    if ((this.getHours >= 21) && (this.getHours < 22)) {
+      // 9pm to 9pm
       theHomeArea!.style.background = "url('../../../assets/images/sunset8bit.png') no-repeat center fixed";
       theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false
     }
   }
 
@@ -146,6 +162,80 @@ export class MainpageComponent implements OnInit {
   projectsScroll() {
     let mPro = window.document.getElementById('projectArea')!;
     mPro.scrollIntoView({ behavior: 'smooth' });
+  }
+  
+
+  updateHourValue(valueGot: number) {
+    this.getnewHours = valueGot;
+    this.getHours = valueGot;
+    console.log(this.dayToggle)
+    let theHomeArea = document.getElementById('homeArea')
+    if ((this.getHours >= 22) && (this.getHours < 24)) {
+      // 10pm to 1am
+      theHomeArea!.style.background = "url('../../../assets/images/setandmoon8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false
+    }
+    if ((this.getHours >= 24) || (this.getHours < 2)) {
+      // 12am to 1am
+      theHomeArea!.style.background = "url('../../../assets/images/moonup8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false
+    }
+    if ((this.getHours >= 2) && (this.getHours < 6)) {
+      // 2am to 5am
+      theHomeArea!.style.background = "url('../../../assets/images/pastmoon8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false
+    }
+    if ((this.getHours >= 5) && (this.getHours < 7)) {
+      // 5am to 6am
+      theHomeArea!.style.background = "url('../../../assets/images/sunrise8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false;
+    }
+    if ((this.getHours >= 7) && (this.getHours < 9)) {
+      // 7am to 8am
+      theHomeArea!.style.background = "url('../../../assets/images/morning8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = true;
+    }
+    if ((this.getHours >= 8) && (this.getHours < 11)) {
+      // 8am to 10am
+      theHomeArea!.style.background = "url('../../../assets/images/highermorning8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = true;
+    }
+    if ((this.getHours >= 11) && (this.getHours < 14)) {
+      // 11pm to 1pm
+      theHomeArea!.style.background = "url('../../../assets/images/noon8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = true;
+    }
+    if ((this.getHours >= 14) && (this.getHours < 17)) {
+      // 2pm to 4pm
+      theHomeArea!.style.background = "url('../../../assets/images/pastnoon8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = true;
+    }
+    if ((this.getHours >= 17) && (this.getHours < 19)) {
+      // 5pm to 6pm
+      theHomeArea!.style.background = "url('../../../assets/images/towardsevening8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = true;
+    }
+    if ((this.getHours >= 19) && (this.getHours < 21)) {
+      // 7pm to 8pm
+      theHomeArea!.style.background = "url('../../../assets/images/nearsunset8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false
+    }
+    if ((this.getHours >= 21) && (this.getHours < 22)) {
+      // 9pm to 9pm
+      theHomeArea!.style.background = "url('../../../assets/images/sunset8bit.png') no-repeat center fixed";
+      theHomeArea!.style.backgroundSize = "100% 100%";
+      this.dayToggle = false
+    }
   }
 
 }
