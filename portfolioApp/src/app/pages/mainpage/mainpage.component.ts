@@ -29,9 +29,9 @@ export const ROUTES: RouteInfo[] = [
     title: "Personal Portfolio",
     pic: "../../../assets/images/pastmoon8bit.png",
     techUsed: "HTML, SCSS, MDBootStrap, TypeScript, Angular 11, Adobe Xd",
-    desc: "Personal portfolio, used to hold my projects, skills, small about me, resume, and ways to contact me",
-    git: "",
-    live: "",
+    desc: "Personal portfolio, used to hold my projects, skills, about me, resume, and ways to contact me",
+    git: "https://github.com/JohnCodePass/PortfolioV2_NG",
+    live: "https://jmoralesportfolio.azurewebsites.net/",
   },
   {
     title: "Business Redevelopment",
@@ -39,7 +39,7 @@ export const ROUTES: RouteInfo[] = [
     techUsed: "HTML, CSS, BootStrap, Adobe Xd",
     desc: "Team project, where we had to find a local business, create a prototype and recreate the website",
     git: "https://github.com/JohnCodePass/Project-4-Business-Redevelopment-Project",
-    live: "",
+    live: "https://poppycoffee-redevelopment-project.azurewebsites.net/",
   },
   {
     title: "Weather App",
@@ -54,8 +54,8 @@ export const ROUTES: RouteInfo[] = [
     pic: "../../../assets/images/cateringHero.jpg",
     techUsed: "HTML, CSS, BootStrap, Adobe Xd",
     desc: "Team project, where we were given a prototype as a reference to create a website",
-    git: "",
-    live: "",
+    git: "https://github.com/JohnCodePass/Project3-PuppyRestaurant",
+    live: "https://restaurantbypuppies.azurewebsites.net/",
   },
   {
     title: "Hamster Hotel",
@@ -65,7 +65,6 @@ export const ROUTES: RouteInfo[] = [
     git: "",
     live: "",
   },
-
 ];
 
 @Component({
@@ -245,5 +244,4 @@ export class MainpageComponent implements OnInit {
       this.dayToggle = false
     }
   }
-
 }
