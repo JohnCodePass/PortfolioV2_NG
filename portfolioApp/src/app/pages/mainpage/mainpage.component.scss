@@ -5,6 +5,10 @@ p {
 span{
   font-family: 'Montserrat', sans-serif;
 }
+
+#timeArea{
+  font-size: 20px;
+}
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @media screen and (min-width: 601px) {
@@ -79,7 +83,7 @@ input {
   color: rgb(0, 174, 255);
   border: none;
   border-bottom: 2px solid rgb(126, 126, 126);
-  width: 7rem;
+  width: 8rem;
 }
 ::placeholder{
   color: rgb(88, 88, 88);
@@ -133,8 +137,9 @@ input {
 
 
 .scroll-down {
+  cursor: pointer;
   position: absolute;
-  bottom: -75px;
+  bottom: -50px;
   display: block;
   text-align: center;
   font-size: 20px;
@@ -146,7 +151,7 @@ input {
   border-right: 3px solid #fff;
   z-index: 9;
   transform: translate(-50%, 0%) rotate(45deg);
-  animation: fade_move_down 4s ease-in-out infinite;
+  animation: fade_move_down 3s ease-in-out infinite;
 }
 
 @keyframes fade_move_down {

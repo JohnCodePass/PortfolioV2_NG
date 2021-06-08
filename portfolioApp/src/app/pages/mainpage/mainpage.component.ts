@@ -45,9 +45,9 @@ export const ROUTES: RouteInfo[] = [
     title: "Weather App",
     pic: "../../../assets/images/night cloudy.jpg",
     techUsed: "HTML, CSS, JavaScript, BootStrap, OpenWeather API, Adobe Xd",
-    desc: "Individual project, where the user enters a city and state to get the current, morning, evening, night time weather, and the 5 day week forecast. User can save cities to local storage.",
-    git: "",
-    live: "",
+    desc: "Individual project, where the user enters a city and state to get the current, morning, evening, night time weather, and the 5 day week forecast. User can save cities to local storage. (Repo is private)",
+    git: "https://github.com/JohnCodePass/JokeApi",
+    live: "https://myweatherapp.azurewebsites.net/",
   },
   {
     title: "Puppy Restaurant",
@@ -62,8 +62,8 @@ export const ROUTES: RouteInfo[] = [
     pic: "../../../assets/images/hamsterhomejpg.jpg",
     techUsed: "HTML, CSS, BootStrap, Adobe Xd",
     desc: "Individual project, where we were given a prototype as reference to create a website",
-    git: "",
-    live: "",
+    git: "https://github.com/JohnCodePass/hamsterHotel",
+    live: "https://hamsterhotelproject.azurewebsites.net/",
   },
 ];
 

@@ -62,7 +62,8 @@
                         [ngClass]="{'dayTime': dayToggle}"><span>LinkedIn</span></a>
                 </li>
                 <li class="list-group-item d-flex flex-column align-items-center" [ngClass]="{'dayTime': dayToggle}">
-                    <a href="" title="Resume" [ngClass]="{'dayTime': dayToggle}">
+                    <a target="_blank" href="../../../assets/JuanMoralesResume2021.pdf" title="Resume"
+                        [ngClass]="{'dayTime': dayToggle}">
                         <i class='far fa-file fa-2x' [ngClass]="{'dayTime': dayToggle}"></i>
                     </a>
                     <a target="_blank" href="../../../assets/JuanMoralesResume2021.pdf" title="View Resume"
@@ -73,19 +74,23 @@
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-8 d-flex justify-content-center">
+            <p id="timeArea" [ngClass]="{'dayTime': dayToggle}">Enter a number between 0 and 24 to change background</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-8 d-flex justify-content-center">
             <input #userHour type="number" id="hourInput" name="inputHour" min="0" max="24"
-                placeholder="{{getHours}}/24 Hours" (keyup.enter)="updateHourValue(+userHour.value)">
+                placeholder="Currently {{getHours}}" (keyup.enter)="updateHourValue(+userHour.value)">
             <button id="theSubBtn" [ngClass]="dayToggle == true ? 'btn btn-outline-dark': 'btn btn-outline-light'"
                 (click)="updateHourValue(+userHour.value)">Submit Time Change</button>
         </div>
     </div>
     <div class="row d-flex justify-content-center" style="position: sticky;">
         <div class="col-8 d-flex justify-content-center">
-            <div class="scroll-down"></div>
+            <div class="scroll-down" (click)="aboutScroll()"></div>
         </div>
     </div>
 </div>
-
 
 <div id="aboutMe" class="container-fluid py-5 d-flex justify-content-center flex-column"
     [ngClass]="{'aboutMeDay': dayToggle, 'aboutMeNight' : !dayToggle}">
@@ -112,7 +117,7 @@
     <div class="row d-flex justify-content-center" style="min-height: 30rem;">
         <div class="col-lg-4 col-12">
             <div class="row">
-                <div class="col-6 d-flex justify-content-center">
+                <div class="col-md-6 col-sm-12 pb-5 d-flex justify-content-center">
                     <ul class="list-group list-group-flush">
                         <p style="font-size: 18px;">Programming Languages</p>
                         <li class="list-group-item">
@@ -128,7 +133,35 @@
                             <span class="skillsText">JavaScript</span>
                         </li>
                         <li class="list-group-item">
-                            <img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png" />
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48"
+                                viewBox="0 0 172 172" style=" fill:#000000;">
+                                <g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
+                                    stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
+                                    text-anchor="none" style="mix-blend-mode: normal">
+                                    <path d="M0,172v-172h172v172z" fill="none" fill-rule="nonzero"></path>
+                                    <g fill-rule="evenodd">
+                                        <path
+                                            d="M82.06908,11.77483c2.43308,-1.36525 5.42875,-1.36525 7.85825,0c12.02208,6.74742 48.19942,27.05775 60.22508,33.80517c2.43308,1.36167 3.93092,3.88433 3.93092,6.61483c0,13.49483 0,54.11192 0,67.60675c0,2.7305 -1.49783,5.25317 -3.93092,6.61842c-12.02208,6.74742 -48.19942,27.05775 -60.22508,33.80517c-2.43308,1.36525 -5.42875,1.36525 -7.85825,0c-12.02208,-6.74742 -48.19942,-27.05775 -60.22508,-33.80517c-2.4295,-1.36525 -3.92733,-3.88433 -3.92733,-6.61483c0,-13.49483 0,-54.11192 0,-67.60675c0,-2.7305 1.49783,-5.25317 3.93092,-6.61842c12.0185,-6.74742 48.203,-27.05775 60.2215,-33.80517z"
+                                            fill="#ae34e1"></path>
+                                        <path
+                                            d="M19.006,123.281c-0.95317,-1.27567 -1.08933,-2.48683 -1.08933,-4.11725c0,-13.416 0,-53.80017 0,-67.21975c0,-2.71617 1.49425,-5.2245 3.92017,-6.579c11.97908,-6.708 48.03458,-26.90008 60.01367,-33.61167c2.42592,-1.35808 5.71183,-1.32942 8.13775,0.02867c11.97908,6.708 47.91275,26.72808 59.89183,33.43608c0.9675,0.54467 1.70567,1.20042 2.365,2.064z"
+                                            fill="#ae34e1"></path>
+                                        <path
+                                            d="M86,35.83333c27.68842,0 50.16667,22.47825 50.16667,50.16667c0,27.68842 -22.47825,50.16667 -50.16667,50.16667c-27.68842,0 -50.16667,-22.47825 -50.16667,-50.16667c0,-27.68842 22.47825,-50.16667 50.16667,-50.16667zM86,60.91667c13.84242,0 25.08333,11.23733 25.08333,25.08333c0,13.84242 -11.24092,25.08333 -25.08333,25.08333c-13.84242,0 -25.08333,-11.24092 -25.08333,-25.08333c0,-13.846 11.23733,-25.08333 25.08333,-25.08333z"
+                                            fill="#ffffff"></path>
+                                        <path
+                                            d="M152.23792,47.31792c1.849,1.73075 1.81317,4.33942 1.81317,6.39267c0,13.59875 -0.11467,52.27725 0.03225,65.876c0.01433,1.419 -0.45508,2.91325 -1.15742,4.03842l-68.38433,-37.625z"
+                                            fill="#ae34e1"></path>
+                                        <path
+                                            d="M121.83333,71.66667h3.58333v28.66667h-3.58333zM132.58333,71.66667h3.58333v28.66667h-3.58333z"
+                                            fill="#ffffff"></path>
+                                        <path
+                                            d="M114.66667,89.58333h28.66667v3.58333h-28.66667zM114.66667,78.83333h28.66667v3.58333h-28.66667z"
+                                            fill="#ffffff"></path>
+                                    </g>
+                                </g>
+                            </svg>
                             <span class="skillsText">C#</span>
                         </li>
                         <li class="list-group-item">
@@ -141,7 +174,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-6 d-flex justify-content-center">
+                <div class="col-md-6 col-sm-12 pb-5 d-flex justify-content-center">
                     <ul class="list-group list-group-flush">
                         <p style="font-size: 18px; text-align: center;">Frameworks/Libraries</p>
                         <li class="list-group-item">
@@ -150,7 +183,7 @@
                         </li>
                         <li class="list-group-item">
                             <img src="../../../assets/images/mdb-transaprent-noshadows.png"
-                                style="width: 48px; height: 35px;" />
+                                style="width: 51px; height: 30px;" />
                             <span class="skillsText">Material Design Bootstrap</span>
                         </li>
                         <li class="list-group-item">
@@ -167,33 +200,33 @@
         </div>
         <div class="col-lg-4 col-12">
             <div class="row">
-                <div class="col-6 d-flex justify-content-center">
+                <div class="col-md-6 col-sm-12 pb-5 d-flex justify-content-center">
                     <ul class="list-group list-group-flush">
-                        <p style="font-size: 18px;">Design</p>
+                        <p style="font-size: 18px; text-align: center;">Design</p>
                         <li class="list-group-item">
                             <img src="https://img.icons8.com/color/48/000000/adobe-xd.png" />
                             <span class="skillsText">Adobe Xd</span>
                         </li>
                         <li class="list-group-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32"
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48"
                                 viewBox="0 0 172 172" style=" fill:#000000;">
                                 <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                                     stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
                                     stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
                                     text-anchor="none" style="mix-blend-mode: normal">
                                     <path d="M0,172v-172h172v172z" fill="none"></path>
-                                    <g fill="#9b59b6">
+                                    <g fill="#fc00ee">
                                         <path
                                             d="M118.52295,53.47705c-2.82188,-0.13438 -5.11255,0.27295 -5.11255,0.27295l21.5,32.25l-21.5,31.7146c0,0 9.6729,1.6125 13.9729,-2.6875c2.6875,-2.6875 4.3,-5.3771 13.4375,-18.2771c1.6125,-2.6875 3.2334,0 3.2334,0c8.0625,10.75 10.2104,15.0521 13.9729,18.2771c4.8375,3.7625 13.9729,2.6875 13.9729,2.6875l-21.5,-31.7146l20.9646,-32.25c0,0 -9.1375,-1.6125 -13.4375,2.6875c-3.225,3.225 -6.4479,7.525 -13.9729,18.8125c0,0 -1.6209,2.6875 -3.2334,0c-7.525,-10.75 -10.7479,-15.5875 -13.9729,-18.8125c-2.15,-2.15 -5.50308,-2.82607 -8.32495,-2.96045zM2.25708,53.69751c-0.76006,-0.03569 -1.51802,-0.0147 -2.25708,0.05249l17.1958,64.5c0,0 5.375,0.0042 8.0625,-1.0708c3.7625,-1.6125 5.3771,-3.2313 7.5271,-11.8313c2.15,-7.525 7.525,-30.6375 8.0625,-32.25c1.075,-3.7625 2.6938,-3.7625 3.7688,0c0.5375,1.6125 5.9125,24.1875 8.0625,32.25c2.15,8.6 3.7541,10.2188 7.5166,11.8313c3.225,1.6125 8.6084,1.0708 8.6084,1.0708l17.1958,-64.5c-5.9125,-0.5375 -12.9,2.6833 -13.4375,9.1333l-9.1333,34.4021l-7.5271,-27.9458c-1.6125,-8.0625 -5.3792,-12.3667 -12.3667,-12.3667c-6.9875,0 -10.2062,3.7667 -12.3562,12.3667l-7.5271,27.9458l-9.1438,-34.4021c-1.41094,-6.11406 -6.93081,-8.93594 -12.25122,-9.18579zM105.3479,53.75c0,0 -4.2937,-0.0042 -6.9812,1.0708c-3.225,1.6125 -4.3042,4.8396 -4.3042,12.9021c0,0 1.6167,-1.6125 4.3042,-2.6875c7.525,-2.6875 6.9812,-8.0604 6.9812,-11.2854zM104.8125,64.5v0.40942c0.13075,-0.23389 0.16192,-0.40942 0,-0.40942zM104.8125,64.90942c-0.30328,0.54252 -1.34501,1.52692 -3.2229,2.27808c-1.6125,1.075 -3.2271,1.6146 -4.8396,2.1521c-3.7625,1.6125 -3.2229,3.7583 -3.2229,9.1333v39.7771c0,0 4.2937,0.5417 6.9812,-1.0708c3.7625,-1.6125 4.3042,-3.7688 4.3042,-11.8313z">
                                         </path>
                                     </g>
                                 </g>
                             </svg>
-                            <span class="skillsText">Wix</span>
+                            <span class="skillsText px-1">Wix</span>
                         </li>
                     </ul>
                 </div>
-                <div class="col-6 d-flex justify-content-center">
+                <div class="col-md-6 col-sm-12 pb-5 d-flex justify-content-center">
                     <ul class="list-group list-group-flush">
                         <p style="font-size: 18px;">DevOps/Software</p>
                         <li class="list-group-item">
@@ -230,7 +263,20 @@
                             <span class="skillsText">Slack</span>
                         </li>
                         <li class="list-group-item">
-                            <img src="https://img.icons8.com/color/48/000000/azure-1.png" />
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48"
+                                viewBox="0 0 172 172" style=" fill:#000000;">
+                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                    stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
+                                    stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none"
+                                    text-anchor="none" style="mix-blend-mode: normal">
+                                    <path d="M0,172v-172h172v172z" fill="none"></path>
+                                    <g fill="#61c7f8">
+                                        <path
+                                            d="M164.83333,143.33333l-59.78075,-104.447l-23.32392,46.97033l41.06142,47.58667l-76.20675,8.65375zM46.913,65.15217l-39.74633,67.0585l33.83383,-3.40058l59.45108,-108.46392z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
                             <span class="skillsText">Azure</span>
                         </li>
                         <li class="list-group-item">
@@ -247,7 +293,7 @@
         </div>
     </div>
     <div id="projectArea" class="row d-flex justify-content-center pt-5">
-        <div class="col-8">
+        <div class="col-md-8 col-sm-10">
             <div class="row py-3 d-flex justify-content-center">
                 <div class="col-8 d-flex justify-content-center">
                     <h2 class="sectionTitles">projects</h2>
