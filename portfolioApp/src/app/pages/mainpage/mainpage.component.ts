@@ -20,10 +20,10 @@ export const ROUTES: RouteInfo[] = [
   {
     title: "QUp App",
     pic: "../../../assets/images/teemoLogin.jpg",
-    techUsed: "HTML, CSS, TypeScript, RIOT API, NGBootStrap, Angular 11, C#, ASP.NET, Adobe Xd",
-    desc: "Full Stack app that is currently in development.",
+    techUsed: "HTML, CSS, TypeScript, NGBootStrap, SignalR, Angular 11, C#, ASP.NET, Adobe Xd",
+    desc: "Full Stack app that allows users to search for other players. App features a real time chat using SignalR, searching players, profile editing and much more.",
     git: "",
-    live: "",
+    live: "https://qupfullstack.azurewebsites.net/",
   },
   {
     title: "Personal Portfolio",
