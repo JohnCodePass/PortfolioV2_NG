@@ -13,16 +13,16 @@ export const ROUTES: RouteInfo[] = [
     title: "Health Force Partners",
     pic: "../../../assets/images/HFPbg.png",
     techUsed: "Velo by Wix, JavaScript, Adobe Xd",
-    desc: "COMING SOON",
-    git: "",
-    live: "",
+    desc: "Recreated Health Force Partners website, starting from a wireframe then prototyping in Adobe Xd, and finally building in Wix using custom JavaScript components. (No repo)",
+    git: "https://github.com/JohnCodePass/JokeApi",
+    live: "https://www.healthforcepartners.net/",
   },
   {
     title: "QUp App",
     pic: "../../../assets/images/teemoLogin.jpg",
     techUsed: "HTML, CSS, TypeScript, NGBootStrap, SignalR, Angular 11, C#, ASP.NET, Adobe Xd",
-    desc: "Full Stack app that allows users to search for other players. App features a real time chat using SignalR, searching players, profile editing and much more.",
-    git: "",
+    desc: "Full Stack app that allows users to search for other players. App features a real time chat using SignalR, searching players, profile editing and much more. (Repo is Private)",
+    git: "https://github.com/JohnCodePass/JokeApi",
     live: "https://qupfullstack.azurewebsites.net/",
   },
   {
@@ -86,7 +86,6 @@ export class MainpageComponent implements OnInit {
     // let dateVar: Date = new Date();
     // let this.getHours = dateVar.this.getHours();
     // let this.getHours = 1;
-    console.log(this.getHours);
     let theHomeArea = document.getElementById('homeArea')
     if ((this.getHours >= 22) && (this.getHours < 24)) {
       // 10pm to 1am
