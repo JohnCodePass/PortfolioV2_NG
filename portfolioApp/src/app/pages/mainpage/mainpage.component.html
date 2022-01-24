@@ -59,11 +59,11 @@
                         [ngClass]="{'dayTime': dayToggle}"><span>LinkedIn</span></a>
                 </li>
                 <li class="list-group-item d-flex flex-column align-items-center" [ngClass]="{'dayTime': dayToggle}">
-                    <a target="_blank" href="../../../assets/JuanMorales_Resume.pdf" title="Resume"
+                    <a target="_blank" href="../../../assets/JuanMorales_Resume2122.pdf" title="View Resume"
                         [ngClass]="{'dayTime': dayToggle}">
                         <i class='far fa-file fa-2x' [ngClass]="{'dayTime': dayToggle}"></i>
                     </a>
-                    <a target="_blank" href="../../../assets/JuanMorales_Resume.pdf" title="View Resume"
+                    <a target="_blank" href="../../../assets/JuanMorales_Resume2122.pdf" title="View Resume"
                         [ngClass]="{'dayTime': dayToggle}"><span>Resume</span></a>
                 </li>
             </ul>
@@ -90,7 +90,7 @@
 </div>
 
 <div id="aboutMe" class="container-fluid py-5 d-flex justify-content-center flex-column"
-    [ngClass]="{'aboutMeDay': dayToggle, 'aboutMeNight' : !dayToggle}">
+    [ngClass]="dayToggle ? 'aboutMeDay' : 'aboutMeNight'">
     <div class="row py-3 d-flex justify-content-center">
         <div class="col-8 col-sm-12 d-flex justify-content-center">
             <h2 class="sectionTitles">&#60;about/&#62;</h2>
